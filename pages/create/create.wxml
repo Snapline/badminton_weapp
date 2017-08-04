@@ -1,0 +1,83 @@
+
+  <!-- 比赛信息表单 -->
+  <view class="sim-form">
+    <view class="sim-form-group">
+        <label style="width:200rpx; display:block">请完善比赛信息</label>
+        
+    </view>
+
+    <view class="sim-form-group">
+      <label>项目类型:</label>
+      <picker bindchange="bindPickerChange" value="{{matchIndex}}" range="{{matchArr}}" bindchange="matchChange">
+        <view class="picker">
+          {{matchArr[matchIndex]}}<text class="sim-arrow-bottom"></text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="sim-form-group">
+      <label>开始时间:</label>
+      <picker mode="date" value="{{startTime}}" bindchange="startTimeChange">
+        <view class="picker">
+          {{startTime}}<text class="sim-arrow-bottom"></text>
+        </view>
+      </picker>
+    </view>
+
+     <view class="sim-form-group">
+      <label>结束时间:</label>
+      <picker mode="date" value="{{endTime}}" bindchange="endTimeChange">
+        <view class="picker">
+          {{endTime}}<text class="sim-arrow-bottom"></text>
+        </view>
+      </picker>
+    </view>
+
+     <view class="sim-form-group">
+      <label>报名截止时间:</label>
+      <picker mode="date" value="{{deadTime}}" bindchange="deadTimeChange">
+        <view class="picker">
+          {{deadTime}}<text class="sim-arrow-bottom"></text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="sim-form-group">
+      <label>地点:</label>
+      <input placeholder="请输入地点" />
+    </view>
+
+    <view class="sim-form-group">
+      <label>人数上限:</label>
+      <input placeholder="请输入人数上限" />
+    </view>
+
+    <view class="sim-form-group">
+      <label style="width:200rpx; display:block">请上传海报图片</label>
+      <view>
+          <view class="image_border">
+            <view class="image-plus-horizontal"></view>
+            <view class="image-plus-vertical"></view>
+          </view>
+         
+      </view>
+    </view>
+  </view>
+
+  
+  <label class="title_tips">创建人预留信息</label>
+  <view class="sim-form">
+    <view class="sim-form-group">
+      <label>称呼:</label>
+      <input placeholder="请输入您的称呼" />
+    </view>
+
+    <view class="sim-form-group">
+      <label>联系电话:</label>
+      <input placeholder="请输入您的手机号码" />
+    </view>
+  </view>
+
+  <view>
+    <button class="sim-btn sim-btn-success">提交</button>
+  </view>

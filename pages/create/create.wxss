@@ -1,0 +1,58 @@
+/* pages/create/create.wxss */
+page{
+  height:100%;
+  background: rgb(242, 242, 242)
+}
+.sim-form-group > wx-label:first-child {
+  width:200rpx
+}
+
+.sim-arrow-bottom{
+  margin-left:10rpx
+}
+
+.image_border{
+  width:300rpx;
+  height:180rpx;
+  margin: 0 auto;
+  border: 1px dotted black;
+  padding-top:70rpx;
+}
+
+.image_border .fa-plus{
+  display:block;
+  font-size:80rpx;
+  width:80rpx;
+  height: 80rpx;
+  color:grey;
+  margin-left: 110rpx;
+  /* margin-top:70rpx */
+}
+
+.image-plus-horizontal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #d9d9d9;
+  width: 10rpx;
+  height: 80rpx;
+  transform: translate(-50%, -50%);
+}
+
+.image-plus-vertical {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #d9d9d9;
+  width: 80rpx;
+  height: 10rpx;
+  transform: translate(-50%, -50%);
+}
+
+.title_tips{
+  display: block;
+  padding-left: 24rpx;
+  margin-top:40rpx;
+  margin-bottom:20rpx;
+  font-size:28rpx
+}

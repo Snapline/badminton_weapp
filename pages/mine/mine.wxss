@@ -1,0 +1,45 @@
+.img_item{
+  position: relative;
+  margin: 20rpx 0;
+  /* background-image: url('../../images/mine_ground.png') */
+}
+
+
+
+.ground_img{
+  width:700rpx;
+  height: 260rpx;
+  margin: 0 auto;
+  display: block;
+}
+
+.pin_area{
+  position: absolute;
+  width:60rpx;
+  height: 60rpx;
+  top:-10rpx;
+  right:80rpx;
+}
+
+.square{
+  position: absolute;
+  top: -130rpx;
+  left: 35%;
+  margin-right: 200rpx;
+  z-index: 10;
+  width:30%;
+  height:200rpx;
+  margin: 0 auto;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+
+.square_img{
+  width: 60rpx;
+  /* height: 60rpx; */
+  overflow: inherit
+}

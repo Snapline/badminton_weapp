@@ -1,0 +1,36 @@
+<!--pages/mine/mine.wxml-->
+<view class="img_item">
+  <image class="ground_img" mode="widthFix" src="../../images/mine_ground.png"></image>
+  <view class="square">
+    <image class="square_img" mode="widthFix" src="../../images/ball_gray.png"></image>
+    <text style="color:#fff; margin-top:20rpx;">我创建的比赛</text>
+  </view>
+  <image class="pin_area" src="../../images/pin_gray.png"></image>
+</view>
+
+<view class="img_item">
+  <image class="ground_img" mode="widthFix" src="../../images/mine_gray_ground.png"></image>
+  <view class="square">
+    <image class="square_img" mode="widthFix" src="../../images/ball_blue.png"></image>
+    <text style="color:#0BA8F9; margin-top:20rpx;">我参加的比赛</text>
+  </view>
+  <image class="pin_area" src="../../images/pin_blue.png"></image>
+</view>
+
+<view class="img_item">
+  <image class="ground_img" mode="widthFix" src="../../images/mine_ground.png"></image>
+   <view class="square">
+    <image class="square_img" mode="widthFix" src="../../images/ball_gray.png"></image>
+    <text style="color:#fff; margin-top:20rpx;">我创建的社团活动</text>
+  </view>
+  <image class="pin_area" src="../../images/pin_gray.png"></image>
+</view>
+
+<view class="img_item">
+  <image class="ground_img" mode="widthFix" src="../../images/mine_gray_ground.png"></image>
+  <view class="square">
+    <image class="square_img" mode="widthFix" src="../../images/ball_blue.png"></image>
+    <text style="color:#0BA8F9; margin-top:20rpx;">我参加的社团活动</text>
+  </view>
+  <image class="pin_area" src="../../images/pin_blue.png"></image>
+</view>

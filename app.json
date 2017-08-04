@@ -1,0 +1,47 @@
+{
+  "pages":[
+    "pages/mine/mine",
+    "pages/create/create",
+    "pages/activity/activity",
+    "pages/about/about",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#0BA8F9",
+    "navigationBarTitleText": "羽毛球报名",
+    "navigationBarTextStyle":"#fff"
+  },
+  "tabBar": {
+    "color": "#FFFFFF",
+    "selectedColor": "#FFFF00",
+    "borderStyle": "#0BA8F9",
+    "backgroundColor": "#0BA8F9",
+    "list": [
+      {
+        "pagePath": "pages/activity/activity",
+        "text": "比赛列表",
+        "iconPath": "images/tab1.png",
+        "selectedIconPath": "images/tab1_selected.png"
+      },
+      {
+        "pagePath": "pages/create/create",
+        "text": "创建比赛",
+        "iconPath": "images/tab2.png",
+        "selectedIconPath": "images/tab2_selected.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的活动",
+        "iconPath": "images/tab3.png",
+        "selectedIconPath": "images/tab3_selected.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "联系我们",
+        "iconPath": "images/tab4.png",
+        "selectedIconPath": "images/tab4_selected.png"
+      }
+    ]
+  }
+}
