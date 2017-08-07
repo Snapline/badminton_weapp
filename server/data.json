@@ -1,0 +1,11 @@
+{
+  "createMatch":[{
+    "name": "女子元毛球单打",
+    "begintime": "2017-05-02",
+    "endtime":"2017-05-03",
+    "address":"上海市虹口区虹口足球场",
+    "numLimited": 50,
+    "dated": 10,
+    "status":"进行中"
+    }]
+}

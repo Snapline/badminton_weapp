@@ -9,6 +9,11 @@
   box-sizing: border-box;
 } 
 
+page{
+  height:100%;
+  background: rgb(242, 242, 242)
+}
+
 text{
   font-family: '微软雅黑'
 }
