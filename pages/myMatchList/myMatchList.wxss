@@ -1,7 +1,11 @@
-.img_container{
+.img_container, .text_container{
   display:flex;
   flex-direction: row ;
   justify-content: space-between;
+}
+
+.img_container{
+  margin-top:10rpx
 }
 
 .img_container .icon{
@@ -10,13 +14,17 @@
 }
 
 .match_box{
-  padding: 30rpx;
+  padding: 20rpx 40rpx;
   background: #fff;
   margin-top:40rpx;
 }
 
 .match_box text{
   display: block;
-  margin: 10rpx 0;
+  margin: 20rpx 0;
   color: rgb(121, 121, 121)
+}
+
+.text_container{
+  border-bottom: 1px solid rgb(242, 242, 242);
 }

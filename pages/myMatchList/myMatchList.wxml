@@ -1,15 +1,17 @@
-<view class="match_box">
-  <text style="font-size:30rpx; color:#000000">sds</text>
-  <text>sds</text>
-  <view class="img_container">
-    <text>人数上限</text>
-    <text>人数上限</text>
+<view class="match_box" wx:for="{{matchList}}">
+  <text style="font-size:30rpx; color:#000000">{{item.name}}</text>
+  <text>{{item.begintime}}至{{item.endtime}}</text>
+  <text>{{item.address}}</text>
+  <view class="text_container">
+    <text>人数上限:{{item.numLimited}}</text>
+    <text>已报名:{{item.dated}}</text>
+    <text>{{item.status}}</text>
   </view>
   <view class="img_container">
-    <image class="icon" src="../../images/tab3/editicon.png"></image>
-    <image class="icon" src="../../images/tab3/addicon.png"></image>
-    <image class="icon" src="../../images/tab3/chakan.png"></image>
-    <image class="icon" src="../../images/tab3/delete.png"></image>
-</view>
+      <image class="icon" src="../../images/tab3/editicon.png"></image>
+      <image class="icon" src="../../images/tab3/addicon.png"></image>
+      <image class="icon" src="../../images/tab3/chakan.png"></image>
+      <image class="icon" src="../../images/tab3/delete.png"></image>
+  </view>
 </view>
 
