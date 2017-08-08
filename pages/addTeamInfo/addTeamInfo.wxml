@@ -1,18 +1,33 @@
+<!--添加小组赛-->
 
   <!-- 比赛信息表单 -->
   <view class="sim-form">
     <view class="sim-form-group">
-        <label style="width:400rpx; display:block">请完善比赛信息</label>
+        <label style="width:400rpx; display:block; color:#999999">请完善小组赛信息</label>
         
     </view>
 
     <view class="sim-form-group">
-      <label>项目类型:</label>
+      <label>项目:</label>
       <picker bindchange="bindPickerChange" value="{{matchIndex}}" range="{{matchArr}}" bindchange="matchChange">
         <view class="picker">
           {{matchArr[matchIndex]}}<text class="sim-arrow-bottom"></text>
         </view>
       </picker>
+    </view>
+
+    <view class="sim-form-group">
+      <label>轮次:</label>
+      <picker bindchange="bindPickerChange" value="{{matchIndex}}" range="{{matchArr}}" bindchange="matchChange">
+        <view class="picker">
+          {{matchArr[matchIndex]}}<text class="sim-arrow-bottom"></text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="sim-form-group">
+      <label>组别:</label>
+      <input placeholder="请输入组别，例如：A组" />
     </view>
 
     <view class="sim-form-group">
@@ -81,3 +96,4 @@
   <view>
     <button class="sim-btn sim-btn-success">提交</button>
   </view>
+

@@ -5,7 +5,7 @@ var oneRequest = {
   fetchApi: function (params) {
 
     var _this = this;
-    var apiDomain = 'http://192.168.31.172:3000'
+    var apiDomain = 'http://localhost:3000'
 
     return new Promise((resolve, reject) => {
       wx.request({

@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/addTeamInfo/addTeamInfo",
     "pages/myMatchList/myMatchList",
     "pages/mine/mine",
     "pages/create/create",
