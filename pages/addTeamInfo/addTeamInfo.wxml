@@ -31,22 +31,25 @@
     </view>
 
     <view class="sim-form-group">
-      <label>开始时间:</label>
-      <picker mode="date" value="{{startTime}}" bindchange="startTimeChange">
+      <label>参赛方1:</label>
+      <input placeholder="请输入参赛1的名称" />
+    </view>
+
+    <view class="sim-form-group">
+      <label>参赛方2:</label>
+      <input placeholder="请输入参赛方2的名称" />
+    </view>
+
+    <view class="sim-form-group">
+      <label>比赛日期:</label>
+      <picker mode="date" value="{{matchTime}}" bindchange="startTimeChange">
         <view class="picker">
           {{startTime}}<text class="sim-arrow-bottom"></text>
         </view>
       </picker>
     </view>
 
-     <view class="sim-form-group">
-      <label>结束时间:</label>
-      <picker mode="date" value="{{endTime}}" bindchange="endTimeChange">
-        <view class="picker">
-          {{endTime}}<text class="sim-arrow-bottom"></text>
-        </view>
-      </picker>
-    </view>
+    
 
      <view class="sim-form-group">
       <label>报名截止时间:</label>
@@ -58,40 +61,17 @@
     </view>
 
     <view class="sim-form-group">
-      <label>地点:</label>
-      <input placeholder="请输入地点" />
+      <label>比分:</label>
+      <input placeholder="参赛方1" /> vs <input placeholder="参赛方2" />
     </view>
 
     <view class="sim-form-group">
-      <label>人数上限:</label>
-      <input placeholder="请输入人数上限" />
+      <label>比赛地点:</label>
+      <input placeholder="请输入比赛地点" />
     </view>
 
-    <view class="sim-form-group">
-      <label style="width:200rpx; display:block">请上传海报图片</label>
-      <view>
-          <view class="image_border">
-            <view class="image-plus-horizontal"></view>
-            <view class="image-plus-vertical"></view>
-          </view>
-         
-      </view>
-    </view>
   </view>
 
-  
-  <label class="title_tips">创建人预留信息</label>
-  <view class="sim-form">
-    <view class="sim-form-group">
-      <label>称呼:</label>
-      <input placeholder="请输入您的称呼" />
-    </view>
-
-    <view class="sim-form-group">
-      <label>联系电话:</label>
-      <input placeholder="请输入您的手机号码" />
-    </view>
-  </view>
 
   <view>
     <button class="sim-btn sim-btn-success">提交</button>
