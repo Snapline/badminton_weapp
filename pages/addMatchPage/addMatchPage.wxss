@@ -1,0 +1,27 @@
+/* pages/addMatchPage/addMatchPage.wxss */
+page{
+  background: #fff;
+}
+.header_bar{
+  text-align: center;
+  background-color: rgb(242,242,242);
+  height: 50rpx;
+  line-height:50rpx;
+}
+
+.addTap{
+  margin-top:20rpx;
+  margin-left:20rpx;
+}
+
+.addTap image{
+  width:30rpx;
+  height: 30rpx;
+}
+
+.addTap i{
+  color: rgb(10, 159, 236);
+  font-style:italic;
+  line-height: 30rpx;
+  font-size:30rpx;
+}

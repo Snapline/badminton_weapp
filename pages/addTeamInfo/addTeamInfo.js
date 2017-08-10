@@ -1,66 +1,61 @@
-// pages/addTeamInfo/addTeamInfo.js
+var utils = require('../../utils/util.js')
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    matchArr: ['男子单打', '女子单打', '男子双打', '女子双打', '男女混双'],
+    matchIndex: 0,
+    roundArr: ['第一轮', '第二轮', '第三轮', '第四轮'],
+    matchDay: utils.formatDay(new Date),
+    startTime: '',
+    endTime: ''
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-  
+
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
-  
+
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
   onPullDownRefresh: function () {
-  
+
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
   onReachBottom: function () {
-  
+
   },
 
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function () {
-  
+
+  },
+
+  //修改比赛类型
+  matchChange(e) {
+    this.setData({
+      matchIndex: e.detail.value
+    })
+  },
+
+  //修改开始时间
+  startTimeChange(e) {
+    this.setData({
+      startTime: e.detail.value
+    })
+  },
+
+  //修改结束时间
+  endTimeChange(e) {
+    this.setData({
+      endTime: e.detail.value
+    })
+  },
+
+  //修改比赛日期
+  startDayChange(e) {
+    this.setData({
+      matchDay: e.detail.value
+    })
   }
 })

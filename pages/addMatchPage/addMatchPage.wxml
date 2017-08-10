@@ -1,0 +1,6 @@
+<!--添加赛程和显示赛程的页面-->
+<view class="header_bar">小组赛</view>
+<view class="addTap">
+  <image src="../../images/tab3/plusicon.png"></image>
+  <i>添加小组赛</i>
+</view>

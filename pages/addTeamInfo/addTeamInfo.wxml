@@ -18,9 +18,9 @@
 
     <view class="sim-form-group">
       <label>轮次:</label>
-      <picker bindchange="bindPickerChange" value="{{matchIndex}}" range="{{matchArr}}" bindchange="matchChange">
+      <picker bindchange="bindPickerChange" value="{{roundIndex}}" range="{{matchArr}}" bindchange="matchChange">
         <view class="picker">
-          {{matchArr[matchIndex]}}<text class="sim-arrow-bottom"></text>
+          {{roundArr[roundIndex]}}<text class="sim-arrow-bottom"></text>
         </view>
       </picker>
     </view>
@@ -32,7 +32,7 @@
 
     <view class="sim-form-group">
       <label>参赛方1:</label>
-      <input placeholder="请输入参赛1的名称" />
+      <input placeholder="请输入参赛方1的名称" />
     </view>
 
     <view class="sim-form-group">
@@ -42,27 +42,36 @@
 
     <view class="sim-form-group">
       <label>比赛日期:</label>
-      <picker mode="date" value="{{matchTime}}" bindchange="startTimeChange">
+      <picker mode="date" value="{{matchDay}}" bindchange="startDayChange">
+        <view class="picker">
+          {{matchDay}}<text class="sim-arrow-bottom"></text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="sim-form-group">
+      <label>比赛开始时间:</label>
+      <picker mode="time" value="{{startTime}}" bindchange="startTimeChange">
         <view class="picker">
           {{startTime}}<text class="sim-arrow-bottom"></text>
         </view>
       </picker>
     </view>
 
-    
-
-     <view class="sim-form-group">
-      <label>报名截止时间:</label>
-      <picker mode="date" value="{{deadTime}}" bindchange="deadTimeChange">
+    <view class="sim-form-group">
+      <label>比赛结束时间:</label>
+      <picker mode="time" value="{{endTime}}" bindchange="endTimeChange">
         <view class="picker">
-          {{deadTime}}<text class="sim-arrow-bottom"></text>
+          {{endTime}}<text class="sim-arrow-bottom"></text>
         </view>
       </picker>
     </view>
 
     <view class="sim-form-group">
       <label>比分:</label>
-      <input placeholder="参赛方1" /> vs <input placeholder="参赛方2" />
+      <input style="width:80rpx; margin-right:10rpx;" placeholder="参赛方1" />
+      vs
+      <input style="width:80rpx; margin-left:10rpx;" placeholder="参赛方2" />
     </view>
 
     <view class="sim-form-group">
