@@ -1,2 +1,8 @@
-<!--pages/about/about.wxml-->
-<text>pages/about/about.wxml</text>
+<!--关于我们-->
+<view class="new_container">
+    <image src="../../images/about_ball.png"></image>
+    <text>电话: 021-22222222</text>
+    <text>邮件： 123123213@qq.com</text>
+    <text>QQ: 2828282828</text>
+    <text>地址：符号是否卡哈萨克</text>
+</view>

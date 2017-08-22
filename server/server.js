@@ -7,6 +7,10 @@ app.get('/creatematch', function (req, res) {
   res.json(data.createMatch );
 })
 
+app.get('/matchinfo', function (req, res) {
+  res.json(data.oneMatchInfo);
+})
+
 
 var server = app.listen(3000, function () {
   var host = server.address().address;

@@ -15,5 +15,13 @@
       "numLimited": 50,
       "dated": 10,
       "status": "已结束"
-    }]
+    }],
+  
+  "oneMatchInfo":{
+    "matchIndex": 0,
+    "startTime": "2017-08-20",
+    "endTime": "2017-08-30",
+    "deadTime": "2017-08-10",
+    "address":"ssadsdd"
+  }
 }

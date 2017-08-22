@@ -1,13 +1,14 @@
 {
   "pages":[
+    "pages/myMatchList/myMatchList",
+    "pages/editMatch/editMatch",
+    "pages/create/create",
     "pages/addElimaination/addElimaination",
     "pages/addTeamInfo/addTeamInfo",
-    "pages/myMatchList/myMatchList",
     "pages/addMatchPage/addMatchPage",
     "pages/mine/mine",
-    "pages/create/create",
-    "pages/activity/activity",
     "pages/about/about",
+    "pages/activity/activity",
     "pages/logs/logs"
   ],
   "window":{

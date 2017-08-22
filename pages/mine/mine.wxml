@@ -1,5 +1,5 @@
 <!--pages/mine/mine.wxml-->
-<view class="img_item">
+<view class="img_item" bindtap="gotoCreateMatch">
   <image class="ground_img" mode="widthFix" src="../../images/mine_ground.png"></image>
   <view class="square">
     <image class="square_img" mode="widthFix" src="../../images/ball_gray.png"></image>

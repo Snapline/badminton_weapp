@@ -2,7 +2,8 @@ import request from '../../request/requestFunc.js';
 
 Page({
   data: {
-    matchList: []
+    matchList: [],
+    noRecord: false
   },
 
   onLoad: function (options) {
@@ -48,5 +49,33 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  //进入编辑页面
+  gotoEdit(e){
+    wx.navigateTo({
+      url: '../editMatch/editMatch?matchid=1',
+    })
+  },
+
+  //进入添加页面
+  gotoAdd(e){
+    wx.navigateTo({
+      url: '../addMatchPage/addMatchPage?matchid=1',
+    })
+  },
+
+  //删除
+  deleteMatch(e){
+    wx.showModal({
+      content: '确定删除该比赛吗？',
+      success: function (res) {
+        if (res.confirm) {
+          //调用接口
+        } else if (res.cancel) {
+          
+        }
+      }
+    })
   }
 })

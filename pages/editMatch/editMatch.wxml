@@ -2,7 +2,7 @@
   <!-- 比赛信息表单 -->
   <view class="sim-form">
     <view class="sim-form-group">
-        <label style="width:400rpx; display:block">请完善比赛信息</label>
+        <label style="width:400rpx; display:block">编辑比赛信息</label>
         
     </view>
 
