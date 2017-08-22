@@ -1,9 +1,9 @@
-<!--添加小组赛-->
+<!--添加淘汰赛-->
 
   <!-- 比赛信息表单 -->
   <view class="sim-form">
     <view class="sim-form-group">
-        <label style="width:400rpx; display:block; color:#999999">请完善小组赛信息</label>
+        <label style="width:400rpx; display:block; color:#999999">请完善淘汰赛信息</label>
         
     </view>
 
@@ -17,17 +17,12 @@
     </view>
 
     <view class="sim-form-group">
-      <label>轮次:</label>
-      <picker bindchange="bindPickerChange" value="{{roundIndex}}" range="{{matchArr}}" bindchange="matchChange">
+      <label>类型:</label>
+      <picker bindchange="bindPickerChange" value="{{typeIndex}}" range="{{matchType}}" bindchange="typeChange">
         <view class="picker">
-          {{roundArr[roundIndex]}}<text class="sim-arrow-bottom"></text>
+          {{matchType[typeIndex]}}<text class="sim-arrow-bottom"></text>
         </view>
       </picker>
-    </view>
-
-    <view class="sim-form-group">
-      <label>组别:</label>
-      <input placeholder="请输入组别，例如：A组" />
     </view>
 
     <view class="sim-form-group">
@@ -81,8 +76,37 @@
 
   </view>
 
+  <view class="header_bar">比赛结果(已产生冠、亚、季军的填写)</view>
+  <view class="sim-form result_box">
+    <view class="sim-form-group">
+      <checkbox-group bindchange="checkboxChange">
+        <label class="checkbox">
+          <checkbox value="champion" />冠军
+          <checkbox value="silverman" />亚军
+          <checkbox value="blondeman" />季军
+        </label>
+      </checkbox-group>
+    </view>
+
+    <view class="sim-form-group" wx:if="{{showGolden}}">
+      <label class="result_label">冠军:</label>
+      <input placeholder="请填写冠军的名称" />
+    </view>
+
+    <view class="sim-form-group" wx:if="{{showSilver}}">
+      <label class="result_label">亚军:</label>
+      <input placeholder="请填写亚军的名称" />
+    </view>
+
+    <view class="sim-form-group" wx:if="{{showBlonde}}">
+      <label class="result_label">季军:</label>
+      <input placeholder="请填写季军的名称" />
+    </view>
+
+  </view>
 
   <view>
     <button class="sim-btn sim-btn-success">提交</button>
   </view>
+
 

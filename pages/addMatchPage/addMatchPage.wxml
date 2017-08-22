@@ -1,6 +1,12 @@
 <!--添加赛程和显示赛程的页面-->
 <view class="header_bar">小组赛</view>
-<view class="addTap">
+<view class="addTap" bindtap="gotoTeamMatch">
   <image src="../../images/tab3/plusicon.png"></image>
   <i>添加小组赛</i>
+</view>
+
+<view class="header_bar" style="margin-top:100rpx;">淘汰赛</view>
+<view class="addTap">
+  <image src="../../images/tab3/plusicon.png"></image>
+  <i>添加淘汰赛</i>
 </view>

@@ -5,9 +5,10 @@ Page({
     matchArr: ['男子单打', '女子单打', '男子双打', '女子双打', '男女混双'],
     matchIndex: 0,
     roundArr: ['第一轮', '第二轮', '第三轮', '第四轮'],
+    roundIndex: 0,
     matchDay: utils.formatDay(new Date),
-    startTime: '',
-    endTime: ''
+    startTime: '08:00',
+    endTime: '10:00'
   },
 
   onLoad: function (options) {

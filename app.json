@@ -1,8 +1,9 @@
 {
   "pages":[
-    "pages/addMatchPage/addMatchPage",
+    "pages/addElimaination/addElimaination",
     "pages/addTeamInfo/addTeamInfo",
     "pages/myMatchList/myMatchList",
+    "pages/addMatchPage/addMatchPage",
     "pages/mine/mine",
     "pages/create/create",
     "pages/activity/activity",

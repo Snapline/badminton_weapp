@@ -1,0 +1,16 @@
+@import '../create/create.wxss';
+
+.header_bar{
+  padding-left:24rpx;
+  background-color: rgb(242,242,242);
+  height: 50rpx;
+  line-height:50rpx;
+}
+
+.result_label{
+  width:100rpx !important;
+}
+
+.checkbox{
+  text-align: center;
+}
