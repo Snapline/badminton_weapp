@@ -1,0 +1,106 @@
+<!--查看赛程的页面-->
+<view class="header_bar">小组赛</view>
+<view class="item_box">
+  <view class="header_one">---第一轮---</view>
+
+  <view class="team_box">
+    <view class="header_one">---A组---</view>
+
+    <view class="one_match">
+      <view class="line">
+        <text class="members">李晓明vs张晓华</text>
+        <view class="scores">--:--</view>
+      </view>
+      
+      <view class="line">
+        <text class="time">2017-07-08   19:00-21:00</text>
+        <view class="status">未开始</view>
+      </view>
+      
+      <view class="line">
+      <view class="address">虹口足球场</view>
+      </view>
+
+    </view>
+
+     <view class="one_match">
+      <view class="line">
+        <text class="members">李晓明vs张晓华</text>
+        <view class="scores">--:--</view>
+      </view>
+      
+      <view class="line">
+        <text class="time">2017-07-08   19:00-21:00</text>
+        <view class="status">未开始</view>
+      </view>
+      
+      <view class="line">
+      <view class="address">虹口足球场</view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class="team_box">
+    <view class="header_one">---B组---</view>
+
+    <view class="one_match">
+      <view class="line">
+        <text class="members">qwe vs asd</text>
+        <view class="scores">--:--</view>
+      </view>
+      
+      <view class="line">
+        <text class="time">2017-07-08   29:00-21:00</text>
+        <view class="status">已结束</view>
+      </view>
+      
+      <view class="line">
+      <view class="address">嘻嘻足球场</view>
+      </view>
+
+    </view>
+  </view>
+
+</view>
+
+<view class="header_bar">淘汰赛</view>
+
+
+  <view class="eliminated_box">
+    <view class="header_one">---半决赛---</view>
+
+    <view class="one_match">
+      <view class="line">
+        <text class="members">李晓明vs张晓华</text>
+        <view class="scores">--:--</view>
+      </view>
+      
+      <view class="line">
+        <text class="time">2017-07-08   19:00-21:00</text>
+        <view class="status">未开始</view>
+      </view>
+      
+      <view class="line">
+      <view class="address">虹口足球场</view>
+      </view>
+
+    </view>
+
+    <view class="one_match">
+      <view class="line">
+        <text class="members">李晓明vs张晓华</text>
+        <view class="scores">--:--</view>
+      </view>
+      
+      <view class="line">
+        <text class="time">2017-07-08   19:00-21:00</text>
+        <view class="status">未开始</view>
+      </view>
+      
+      <view class="line">
+        <view class="address">虹口足球场</view>
+      </view>
+
+    </view>
+  </view>

@@ -1,0 +1,39 @@
+page{
+  background: #fff;
+}
+
+.header_bar{
+  text-align: center;
+  background-color: rgb(242,242,242);
+  height: 50rpx;
+  line-height:50rpx;
+}
+
+.one_match{
+  border-bottom: 1px solid rgb(242,242,242);
+}
+
+.header_one{
+  text-align: center;
+  margin: 30rpx;
+}
+
+.line{
+  margin:20rpx auto;
+  width:96%;
+}
+
+.scores{
+  float: right;
+  font-weight: bold;
+}
+
+.time, .address{
+  color: rgb(121,121,121);
+}
+
+.status{
+  float: right;
+  font-style:italic;
+  color: #0BA8F9
+}
