@@ -1,1 +1,27 @@
 /* pages/activity/activity.wxss */
+.header{
+  background-color: rgb(230,230,230);
+  display:flex;
+  flex-direction: row ;
+  justify-content: space-between;
+  padding: 40rpx 20rpx;
+}
+
+.control{
+  display: flex;
+  font-weight: bold;
+}
+
+.fa{
+  font-size:32rpx;
+  vertical-align: top;
+}
+
+.sim-modal-container {
+  height: 300rpx;
+  padding: 20px;
+}
+
+.chosen{
+  color: #0BA8F9;
+}

@@ -1,0 +1,36 @@
+.none_tips{
+   margin-top:100rpx;
+  text-align: center; 
+  font-family: '微软雅黑'
+}
+
+.img_container, .text_container{
+  display:flex;
+  flex-direction: row ;
+  justify-content: space-between;
+}
+
+.img_container{
+  margin-top:10rpx
+}
+
+.img_container .icon{
+  width:46rpx;
+  height:46rpx;
+}
+
+.match_box{
+  padding: 20rpx 40rpx;
+  background: #fff;
+  margin-top:40rpx;
+}
+
+.match_box text{
+  display: block;
+  margin: 20rpx 0;
+  color: rgb(121, 121, 121)
+}
+
+.text_container{
+  border-bottom: 1px solid rgb(242, 242, 242);
+}

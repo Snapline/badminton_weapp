@@ -20,5 +20,12 @@ Page({
     wx.navigateTo({
       url: '../myMatchList/myMatchList',
     })
+  },
+
+  //跳转参加的比赛
+  gotoAttendMatch(){
+    wx.navigateTo({
+      url: '../attendList/attendList',
+    })
   }
 })

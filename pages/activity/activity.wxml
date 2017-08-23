@@ -1,2 +1,26 @@
 <!--pages/activity/activity.wxml-->
-<text>pages/activity/activity.wxml</text>
+<view class="header">
+  <text bindtap="timeArrange" class="control {{timeModal ? 'chosen':''}}">时间<text class="fa fa-sort-desc" aria-hidden="true"></text>
+  </text>
+  <text bindtap="popularArrange" class="control {{popularModal ? 'chosen':''}}">热度<text class="fa fa-sort-desc" aria-hidden="true"></text>
+  </text>
+ 
+  <text class="control {{progressModal ? 'chosen':''}}" bindtap="toggleProgressModal">{{progressState}}<text class="fa fa-sort-desc" aria-hidden="true"></text></text>
+</view>
+
+
+<!-- 进度选择弹窗 -->
+<view class="sim-modal {{showModal ? 'sim-modal-show':''}}">
+  <view class="sim-modal-mask" bindtap="toggleProgressModal"></view>
+  <view class="sim-modal-container">
+    <view class="sim-row" data-state="1" bindtap="chooseProgress">
+      <text>报名中</text>
+    </view>
+    <view class="sim-row" data-state="2" bindtap="chooseProgress">
+      <text>进行中</text>
+    </view>
+    <view class="sim-row" data-state="0" bindtap="chooseProgress">
+      <text>已结束</text>
+    </view>
+  </view>
+</view>

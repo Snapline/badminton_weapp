@@ -1,5 +1,5 @@
 <view class="none_tips" wx:if="{{noRecord}}">
-  您暂未创建比赛
+  您暂未参加比赛
 </view>
 <view class="match_box" wx:for="{{matchList}}">
   <text style="font-size:30rpx; color:#000000">{{item.name}}</text>
@@ -11,9 +11,7 @@
     <text>{{item.status}}</text>
   </view>
   <view class="img_container">
-      <image class="icon" src="../../images/tab3/editicon.png" bindtap="gotoEdit"></image>
-      <image class="icon" src="../../images/tab3/addicon.png" bindtap="gotoAdd"></image>
-      <image class="icon" src="../../images/tab3/chakan.png" bindtap="gotoDetails"></image>
+      <image class="icon" src="../../images/tab3/chakan2.png" bindtap="gotoDetails"></image>
       <image class="icon" data-matchid="{{item.status}}" src="../../images/tab3/delete.png" bindtap="deleteMatch"></image>
   </view>
 </view>
