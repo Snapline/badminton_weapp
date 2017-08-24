@@ -106,7 +106,7 @@
   </view>
 
   <view>
-    <button class="sim-btn sim-btn-success">提交</button>
+    <button class="sim-btn sim-btn-info">提交</button>
   </view>
 
 

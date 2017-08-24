@@ -1,32 +1,32 @@
-// pages/activity/activity.js
+import request from '../../request/requestFunc.js';
+var app = getApp();
 Page({
   data: {
+    matchList:[],
     timeModal: true, //选择时间排序
     popularModal: false, //热度选择排序
     progressModal: false, //选择进度排序
     showModal: false, //选择进度的弹窗
-    progressState: '进度'
+    progressState: '进度',
+    orderType: 'time',
+    bottomNum: 1,
+    hasToEnd: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    app.getUserInfo();
+    const that = this;
+    setTimeout(function(){
+      console.log(app.globalData.sessionId)
+      getActivities(that)
+    },800)
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
-  
+    
   },
 
   /**
@@ -70,8 +70,10 @@ Page({
       timeModal: true, 
       popularModal: false, 
       progressModal: false,
-      progressState: '进度'
+      progressState: '进度',
+      orderType: 'time'
     })
+    getActivities(this)
   },
 
   //点击热度查询
@@ -80,8 +82,10 @@ Page({
       timeModal: false,
       popularModal: true,
       progressModal: false,
-      progressState: '进度'
+      progressState: '进度',
+      orderType: 'heat'
     })
+    getActivities(this)
   },
 
   //点击进度查询
@@ -98,7 +102,8 @@ Page({
       timeModal: false,
       popularModal: false,
       progressModal: true,
-      showModal: !this.data.showModal
+      showModal: !this.data.showModal,
+      orderType: 'time'
     })
   },
 
@@ -109,3 +114,28 @@ Page({
     })
   }
 })
+
+function getActivities(that){
+  let param = {
+    'API_URL': '/wx/game/list',
+    'data': {
+      'pageNum': that.data.bottomNum,
+      'perPage': 6,
+      'orderType': that.data.orderType
+    },
+    'header': {
+      'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
+      'Cookie': app.globalData.sessionId
+    },
+    'method': 'POST'
+  }
+
+  request.oneRequest.result(param).then(res => {
+    that.setData({
+      matchList:res.data.result.data
+    })
+  }
+  ).catch(e =>  
+    console.log(e)
+  )
+}

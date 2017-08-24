@@ -15,6 +15,17 @@
       </picker>
     </view>
 
+    <view class="sim-form-group" wx:if="{{matchIndex==5}}">
+      <label>比赛项目:</label>
+       <checkbox-group bindchange="chooseTeamType">
+        <label class="checkbox" wx:for="{{teamType}}">
+          <checkbox value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
+        </label>
+      </checkbox-group>
+    </view>
+
+   
+
     <view class="sim-form-group">
       <label>开始时间:</label>
       <picker mode="date" value="{{startTime}}" bindchange="startTimeChange">
@@ -79,5 +90,5 @@
   </view>
 
   <view>
-    <button class="sim-btn sim-btn-success">提交</button>
+    <button class="sim-btn sim-btn-info" bindtap="submitInfo">提交</button>
   </view>

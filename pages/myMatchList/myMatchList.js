@@ -1,9 +1,11 @@
 import request from '../../request/requestFunc.js';
-
+var app = getApp();
 Page({
   data: {
     matchList: [],
-    noRecord: false
+    noRecord: false,
+    bottomNum: 1,
+    hasToEnd: false
   },
 
   onLoad: function (options) {
@@ -11,22 +13,7 @@ Page({
   },
 
   onShow: function () {
-    let _this = this;
-    
-    let param = {
-      'API_URL': '/creatematch',
-      'data':{},
-      'method': 'GET'
-    }
-
-    request.result(param).then(res => {
-      _this.setData({
-          matchList: res.data
-        })
-      }
-    ).catch(e =>
-      console.log(e)
-    )
+    getMyMatch(this)
   },
 
   onPullDownRefresh: function () {
@@ -34,7 +21,16 @@ Page({
   },
 
   onReachBottom: function () {
-  
+    if (!this.data.hasToEnd) {
+      var tempCount = this.data.bottomNum;
+      this.setData({
+        bottomNum: tempCount + 1
+      });
+      getMyMatch(this)
+    }
+    else {
+      request.failTips('已经到底啦！')
+    }
   },
 
   onShareAppMessage: function () {
@@ -76,3 +72,39 @@ Page({
     })
   }
 })
+
+function getMyMatch(that) {
+  let param = {
+    'API_URL': '/wx/game/creator/query',
+    'data': {
+      'pageNum': that.data.bottomNum,
+      'perPage': 2
+    },
+    'header': {
+      'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
+      'Cookie': app.globalData.sessionId
+    },
+    'method': 'POST'
+  }
+
+  request.oneRequest.result(param).then(res => {
+    var resJson = res.data.result.data;
+    var previousmatchList = that.data.matchList;
+    for (var i = 0; i < resJson.length; i++) {
+      previousmatchList.push(resJson[i])
+    }
+
+    that.setData({
+      matchList: previousmatchList
+    })
+
+    if (that.data.bottomNum == res.data.result.totalPage) {
+      that.setData({
+        hasToEnd: true
+      })
+    }
+  }
+  ).catch(e =>
+    console.log(e)
+    )
+}

@@ -1,19 +1,18 @@
 import Promise from 'es6-promise';
+var apiDomain = 'http://114.220.192.223:9090';
+var app = getApp();
 
 var oneRequest = {
 
   fetchApi: function (params) {
 
     var _this = this;
-    var apiDomain = 'http://localhost:3000'
 
     return new Promise((resolve, reject) => {
       wx.request({
         url: apiDomain+params.API_URL,
         data: Object.assign({}, params.data),
-        header: {
-          'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
-        },
+        header: Object.assign({}, params.header),
         method: params.method,
         success: resolve,
         fail: reject
@@ -30,7 +29,22 @@ var oneRequest = {
 
   }
 
+};
+
+var showModal = function (content) {
+  wx.showModal({
+    content: content,
+    showCancel: false,
+    success: function (res) {
+      if (res.confirm) {
+
+      }
+    }
+  })
 }
 
-
-export default oneRequest;
+module.exports = {
+  oneRequest: oneRequest,
+  APIDomian: apiDomain,
+  failTips: showModal
+}

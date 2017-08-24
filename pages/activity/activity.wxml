@@ -8,33 +8,43 @@
   <text class="control {{progressModal ? 'chosen':''}}" bindtap="toggleProgressModal">{{progressState}}<text class="fa fa-sort-desc" aria-hidden="true"></text></text>
 </view>
 <!-- 比赛信息卡片 -->
-<view class="item_box" bindtap="gotoDetails">
+<view class="item_box" bindtap="gotoDetails" wx:for="{{matchList}}">
     <view class="image_area">
-        <image src="../../images/tab1/male.png"></image>
+        <image wx:if="{{item.gameType=='男单'}}" src="../../images/tab1/male.png"></image>
+        <image wx:if="{{item.gameType=='女单'}}" src="../../images/tab1/female.png"></image>
+        <image wx:if="{{item.gameType=='男双'}}" src="../../images/tab1/maletwo.png"></image>
+        <image wx:if="{{item.gameType=='女双'}}" src="../../images/tab1/femaletwo.png"></image>
+        <image wx:if="{{item.gameType=='混双'}}" src="../../images/tab1/mixed.png"></image>
     </view>
     <view class="text_area">
       <view class="line">
-        <text class="title">男子羽毛球单打</text>
+        <text class="title">{{item.gameType}}</text>
       </view>
 
       <view class="line">
        <image class="icon_img" src="../../images/tab1/calender.png"></image>
-        <text class="description">2017.06.18</text>
+        <text class="description">{{item.beginTime}}——{{item.endTime}}</text>
       </view>
 
       <view class="line">
        <image class="icon_img" src="../../images/tab1/address.png"></image>
-        <text class="description">浦东新区哈哈哈</text>
+        <text class="description">{{item.address}}</text>
         <view class="member_num">
           <image src="../../images/tab1/team.png"></image>
-          <text class="description">11</text>
+          <text class="description">{{item.participantNum}}</text>
         </view>
       </view>
     </view>
 
     <!-- 进度信息 -->
-    <image class="progress_box" src="../../images/tab1/jinxing.png">
+    <image wx:if="{{item.progress=='进行中'}}" class="progress_box" src="../../images/tab1/jinxing.png">
       <view class="progress_text">进行中</view>
+    </image>
+    <image wx:if="{{item.progress=='报名中'}}" class="progress_box" src="../../images/tab1/baoming.png">
+      <view class="progress_text">报名中</view>
+    </image>
+    <image wx:if="{{item.progress=='已结束'}}" class="progress_box" src="../../images/tab1/end.png">
+      <view class="progress_text">已结束</view>
     </image>
 </view>
 
