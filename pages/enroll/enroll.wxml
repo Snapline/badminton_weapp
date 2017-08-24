@@ -1,0 +1,53 @@
+<view class="">
+  <image class="paperwall" src="../../images/tab1/u73.png"></image>
+
+  <view style="height:1px"></view>
+
+  <view class="sim-list">
+    <view class="sim-list-item">
+     
+      <view> 
+        <image class="icon_area"  src="../../images/tab1/calender.png"></image>
+        比赛时间
+      </view>
+      <text class="text-gray">{{matchTime}}</text>
+    </view>
+
+    <view class="sim-list-item">
+      <view> 
+        <image class="icon_area"  src="../../images/tab1/address.png"></image>
+        比赛地点
+      </view>
+      <text class="text-gray">{{matchAddress}}</text>
+    </view>
+
+    <view class="sim-list-item">
+      <view> 
+        <image class="icon_area"  src="../../images/tab1/team.png"></image>
+        参赛人数
+      </view>
+      <text class="text-gray">{{memberNum}}</text>
+    </view>
+
+    <view class="sim-list-item">
+      <view> 
+        <image class="icon_area"  src="../../images/tab1/contact.png"></image>
+        联系人
+      </view>
+      <text class="text-gray">{{ownerName}}</text>
+    </view>
+
+    <view class="sim-list-item">
+      <view> 
+        <image class="icon_area"  src="../../images/tab1/phone.png"></image>
+        联系电话
+      </view>
+      <text class="text-gray">{{phone}}</text>
+    </view>
+  </view>
+
+  <view>
+    <button class="sim-btn sim-btn-info" bindtap="gotoInfoPage">我要报名</button>
+  </view>
+  
+</view>

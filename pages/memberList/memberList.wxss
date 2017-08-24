@@ -1,0 +1,29 @@
+.card{
+  width:80%;
+  height:160rpx;
+  padding-bottom: 40rpx;
+  background: #fff;
+  box-shadow: 10rpx 10rpx 10rpx rgb(200, 200, 200);
+  border-radius:30rpx;
+}
+
+text{
+  line-height: 40rpx;
+}
+
+.half_box{
+  width:50%;
+  display: inline-block;
+  text-align: center;
+}
+
+.title{
+  color: rgb(121, 121, 121);
+  font-weight: bold;
+}
+
+.number{
+  font-size:50rpx;
+  color: #0BA8F9;
+  font-style: italic;
+}

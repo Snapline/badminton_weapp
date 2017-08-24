@@ -1,0 +1,23 @@
+<!--pages/mine/mine.wxml-->
+<view class="container">
+  <view class="card">
+    <view class="half_box">
+      <text class="title">
+        人数上限
+      </text>
+      <text class="number">
+        10
+      </text>
+    </view>
+
+    <view class="half_box">
+      <text class="title">
+        已报名
+      </text>
+      <text class="number">
+        10
+      </text>
+    </view>
+  </view>
+</view>
+

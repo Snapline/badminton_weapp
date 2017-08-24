@@ -100,5 +100,12 @@ Page({
       progressModal: true,
       showModal: !this.data.showModal
     })
+  },
+
+  //进入活动详情
+  gotoDetails(e){
+    wx.navigateTo({
+      url: '../enroll/enroll?matchid=1',
+    })
   }
 })

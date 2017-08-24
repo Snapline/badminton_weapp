@@ -1,0 +1,27 @@
+  <text style="width:100%; display:block;text-align:center;margin: 80rpx auto;">
+    请完善报名信息
+  </text>
+  <view class="sim-form">
+
+    <view class="sim-form-group">
+      <label>参赛者名单:</label>
+      <input placeholder="请输入参赛者名单" value="{{nickName}}" bindinput="inputNickname"/>
+    </view>
+
+    <view class="sim-form-group">
+      <label>电话:</label>
+      <input placeholder="请输入联系电话" value="{{phone}}" bindinput="inputPhone"/>
+    </view>
+
+
+    <view class="sim-form-group">
+      <label>备注:</label>
+      <input placeholder="您有什么话要嘱咐" value="{{message}}" bindinput="inputNote"/>
+    </view>
+
+  </view>
+
+
+  <view style="margin-top:80rpx;">
+    <button class="sim-btn sim-btn-info" bindtap="submitInfo">提交报名</button>
+  </view>

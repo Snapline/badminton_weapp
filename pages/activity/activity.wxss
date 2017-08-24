@@ -25,3 +25,74 @@
 .chosen{
   color: #0BA8F9;
 }
+
+.image_area{
+  width: 160rpx;
+  float: left;
+  overflow: hidden;
+}
+
+.image_area image{
+  width: 80rpx;
+  height:80rpx;
+  margin: 20rpx 40rpx;
+}
+
+.text_area{
+  margin-left:160rpx;
+  box-sizing: border-box;
+}
+
+.line{
+  margin: 10rpx 0;
+  position: relative;
+}
+
+.icon_img{
+  width:36rpx;
+  height:36rpx;
+  vertical-align: bottom;
+}
+
+.title{
+  font-weight: bold;
+  font-size:38rpx;
+}
+
+.description{
+  margin-left:10rpx;
+  color: rgb(121,121,121);
+}
+
+.item_box{
+  position: relative;
+  background: #fff;
+}
+
+.member_num{
+  position: absolute;
+  right: 20rpx;
+  top: 0;
+}
+
+.member_num image{
+  width:36rpx;
+  height:36rpx;
+}
+
+.progress_box{
+  position: absolute;
+  color: #fff;
+  right:0;
+  top:0;  
+  width:130rpx;
+  height:56rpx;
+}
+
+.progress_text{
+  top:0;
+  position:absolute;
+  width:130rpx;
+  text-align: center;
+  line-height:50rpx;
+}

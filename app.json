@@ -1,6 +1,10 @@
 {
   "pages":[
+    "pages/memberList/memberList",
+    "pages/enroll/enroll",
     "pages/activity/activity",
+    "pages/enrollInfo/enrollInfo",
+    "pages/enroll/enroll",
     "pages/mine/mine",
     "pages/matchDetails/matchDetails",
     "pages/addElimaination/addElimaination",

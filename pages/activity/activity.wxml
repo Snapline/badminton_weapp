@@ -7,6 +7,36 @@
  
   <text class="control {{progressModal ? 'chosen':''}}" bindtap="toggleProgressModal">{{progressState}}<text class="fa fa-sort-desc" aria-hidden="true"></text></text>
 </view>
+<!-- 比赛信息卡片 -->
+<view class="item_box" bindtap="gotoDetails">
+    <view class="image_area">
+        <image src="../../images/tab1/male.png"></image>
+    </view>
+    <view class="text_area">
+      <view class="line">
+        <text class="title">男子羽毛球单打</text>
+      </view>
+
+      <view class="line">
+       <image class="icon_img" src="../../images/tab1/calender.png"></image>
+        <text class="description">2017.06.18</text>
+      </view>
+
+      <view class="line">
+       <image class="icon_img" src="../../images/tab1/address.png"></image>
+        <text class="description">浦东新区哈哈哈</text>
+        <view class="member_num">
+          <image src="../../images/tab1/team.png"></image>
+          <text class="description">11</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 进度信息 -->
+    <image class="progress_box" src="../../images/tab1/jinxing.png">
+      <view class="progress_text">进行中</view>
+    </image>
+</view>
 
 
 <!-- 进度选择弹窗 -->
