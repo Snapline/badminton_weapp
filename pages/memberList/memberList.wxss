@@ -1,3 +1,7 @@
+.container{
+  height: auto;
+}
+
 .card{
   width:80%;
   height:160rpx;
@@ -26,4 +30,32 @@ text{
   font-size:50rpx;
   color: #0BA8F9;
   font-style: italic;
+}
+
+.info_box{
+  width:80%;
+  margin: 50rpx auto;
+}
+
+.info_item{
+  width:100%;
+  background: #fff;
+  height:60rpx;
+  margin: 10rpx 0;
+}
+
+.sub_title{
+  color: #0BA8F9;
+  
+}
+
+.sub_title, .left_name, .right_num{
+  width: 50%;
+  text-align: center;
+  line-height: 60rpx;
+  display: inline-block;
+}
+
+.right_num{
+  font-weight: bold;
 }

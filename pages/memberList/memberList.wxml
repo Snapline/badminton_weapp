@@ -19,5 +19,26 @@
       </text>
     </view>
   </view>
+
+  <view class="info_box">
+    <view class="info_item">
+        <view class="sub_title">
+          报名人
+        </view>
+        <view class="sub_title">
+          报名人数
+        </view>
+    </view>
+
+    <view class="info_item">
+      <view class="left_name">
+        小小志市人民
+      </view>
+
+      <view class="right_num">
+        22
+      </view>
+    </view>
+  </view>
 </view>
 

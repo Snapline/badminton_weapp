@@ -83,6 +83,6 @@
 
 
   <view>
-    <button class="sim-btn sim-btn-success">提交</button>
+    <button class="sim-btn sim-btn-success" bindtap="submitAdd">提交</button>
   </view>
 

@@ -6,6 +6,7 @@ Page({
     matchIndex: 0,
     roundArr: ['第一轮', '第二轮', '第三轮', '第四轮'],
     roundIndex: 0,
+    groups:'',
     matchDay: utils.formatDay(new Date),
     startTime: '08:00',
     endTime: '10:00'
@@ -58,5 +59,39 @@ Page({
     this.setData({
       matchDay: e.detail.value
     })
+  },
+
+  //提交添加小组赛
+  submitAdd(){
+    let _this = this;
+
+    const submitData = {
+      'gameEvent': this.data.matchIndex + 1,
+      'rounds': this.data.roundArr[this.data.roundIndex],
+      'beginTime': this.data.startTime,
+      'endTime': this.data.endTime,
+      'deadline': this.data.deadTime,
+      'address': this.data.address,
+      'limitNum': this.data.memberLimited,
+      'creator': this.data.ownerName,
+      'creatorPhone': this.data.phoneNumber
+    }
+
+    let param = {
+      'API_URL': '/wx/game/create',
+      'data': submitData,
+      'header': {
+        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
+        'Cookie': app.globalData.sessionId
+      },
+      'method': 'POST'
+    }
+
+    request.oneRequest.result(param).then(res => {
+
+    }
+    ).catch(e =>
+      console.log(e)
+    )
   }
 })

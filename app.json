@@ -1,8 +1,8 @@
 {
   "pages":[
+    "pages/myOrganization/myOrganization",
     "pages/activity/activity",
     "pages/create/create",
-    "pages/memberList/memberList",
     "pages/enroll/enroll",
     "pages/enrollInfo/enrollInfo",
     "pages/enroll/enroll",
@@ -13,6 +13,8 @@
     "pages/myMatchList/myMatchList",
     "pages/attendList/attendList",
     "pages/addMatchPage/addMatchPage",
+    "pages/memberList/memberList",
+
     "pages/about/about",
     "pages/logs/logs"
   ],
