@@ -1,12 +1,30 @@
 <!--添加赛程和显示赛程的页面-->
 <view class="header_bar">小组赛</view>
+
+<view class="info_item" wx:for="{{teamList}}">
+  {{item.rounds}} {{item.groups}}  {{item.participant}}vs{{item.participant2}} {{item.score==''?'--':item.score}}vs{{item.score2==''?'--':item.score2}}  {{item.gameDate}}
+  <view class="icon">
+    <image data-teamid="{{item.id}}" bindtap="editTeamInfo" src="../../images/tab3/editicon.png" style="width:36rpx; height:36rpx"></image>
+    <image data-teamid="{{item.id}}" bindtap="deleteTeam" src="../../images/tab3/delete.png"></image>
+  </view>
+</view>
+
 <view class="addTap" bindtap="gotoTeamMatch">
   <image src="../../images/tab3/plusicon.png"></image>
   <i>添加小组赛</i>
 </view>
 
 <view class="header_bar" style="margin-top:100rpx;">淘汰赛</view>
-<view class="addTap">
+
+<view class="info_item" wx:for="{{knockoutList}}">
+  {{item.rounds}} {{item.groups}}  {{item.participant}}vs{{item.participant2}} {{item.score==''?'--':item.score}}vs{{item.score2==''?'--':item.score2}}  {{item.gameDate}}
+  <view class="icon">
+    <image data-teamid="{{item.id}}" bindtap="editKnockoutInfo" src="../../images/tab3/editicon.png" style="width:36rpx; height:36rpx"></image>
+    <image data-teamid="{{item.id}}" bindtap="deleteKnockout" src="../../images/tab3/delete.png"></image>
+  </view>
+</view>
+
+<view class="addTap"  bindtap="gotoKnockoutMatch">
   <image src="../../images/tab3/plusicon.png"></image>
   <i>添加淘汰赛</i>
 </view>

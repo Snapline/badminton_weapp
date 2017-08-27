@@ -20,6 +20,7 @@ Page({
     address:'',
     memberLimited:0,
     imageList:[],
+    imageUrl:'',
     ownerName: '',
     phoneNumber: ''
   },
@@ -105,7 +106,8 @@ Page({
         var newArr = [];
         newArr.push(res.tempFilePaths[0])
         that.setData({
-          imageList: newArr
+          imageList: newArr,
+          imageUrl: res.tempFilePaths[0]
         }) 
        
       }
@@ -121,13 +123,15 @@ Page({
 
   //输入手机号
   inputPhone(e){
-    phoneNumber: e.detail.value
+    this.setData({
+      phoneNumber: e.detail.value
+    })
   },
 
   //点击提交
   submitInfo(){
     const submitData = {
-      'gameType': this.data.matchIndex + 1,
+      'gameType': parseInt(this.data.matchIndex) + 1,
       'teamType': this.data.teamTypeChosen.join(','),
       'beginTime': this.data.startTime,
       'endTime': this.data.endTime,
@@ -152,7 +156,15 @@ Page({
       }
 
       request.oneRequest.result(param).then(res => {
-        
+        if (res.data.code == '400001') {
+          request.failTips('有相关数据没有填写哦！')
+        }
+        if (res.data.code == '000000') {
+          //成功
+          wx.switchTab({
+            url: '../mine/mine',
+          })
+        }
       }
       ).catch(e =>
         console.log(e)
@@ -172,8 +184,15 @@ Page({
         },
         method: 'POST',
         success: function (res) {
-          console.log(app.globalData.sessionId)
-          console.log(res)
+          if(res.data.code=='400001'){
+            request.failTips('有相关数据没有填写哦！')
+          }
+          if(res.data.code == '000000'){
+            //成功
+            wx.switchTab({
+              url: '../mine/mine',
+            })
+          }
         },
         fail: function (e) {
           console.log(e);

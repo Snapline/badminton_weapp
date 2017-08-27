@@ -37,3 +37,14 @@ page{
   font-style:italic;
   color: #0BA8F9
 }
+
+.none_tips{
+   margin-top:100rpx;
+  text-align: center; 
+  font-family: '微软雅黑'
+}
+
+.detail_box{
+  background: url('http://chuantu.biz/t6/24/1503836800x1968388155.png') no-repeat fixed bottom;
+  min-height:100%;
+}

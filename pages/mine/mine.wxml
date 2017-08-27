@@ -17,7 +17,7 @@
   <image class="pin_area" src="../../images/pin_blue.png"></image>
 </view>
 
-<view class="img_item">
+<view class="img_item" bindtap="gotoClubMatch">
   <image class="ground_img" mode="widthFix" src="../../images/mine_ground.png"></image>
    <view class="square">
     <image class="square_img" mode="widthFix" src="../../images/ball_gray.png"></image>
@@ -26,7 +26,7 @@
   <image class="pin_area" src="../../images/pin_gray.png"></image>
 </view>
 
-<view class="img_item">
+<view class="img_item" bindtap="gotoClubParticipant">
   <image class="ground_img" mode="widthFix" src="../../images/mine_gray_ground.png"></image>
   <view class="square">
     <image class="square_img" mode="widthFix" src="../../images/ball_blue.png"></image>

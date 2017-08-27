@@ -4,27 +4,61 @@ var app = getApp();
 Page({
 
   data: {
-    addGameId: 0,
+    addGameId: 0,//比赛的id
+    teamId: 0, //小组赛的id
     matchArr: ['男子单打', '女子单打', '男子双打', '女子双打', '男女混双'],
     matchIndex: 0,
     roundArr: ['第一轮', '第二轮', '第三轮', '第四轮'],
-    roundIndex: 0,
-    groups:'',
-    participant:'',
-    participant2:'',
+    roundIndex:0,
+    rounds: '第一轮',
+    groups: '',
+    participant: '',
+    participant2: '',
     matchDay: utils.formatDay(new Date),
     startTime: '08:00',
     endTime: '10:00',
-    score: '',
-    score2: '',
-    address:'',
+    score: '--',
+    score2: '--',
+    address: '',
   },
 
   onLoad: function (options) {
-    const oGameId = options.matchid;
     this.setData({
-      addGameId:oGameId
+      addGameId: options.matchid,
+      teamId: options.teamid
     })
+    //查询小组赛信息
+    let _this = this;
+    let param = {
+      'API_URL': '/wx/group_game/query',
+      'data': {
+        'id': options.teamid
+      },
+      'header': {
+        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
+        'Cookie': app.globalData.sessionId
+      },
+      'method': 'POST'
+    }
+
+    request.oneRequest.result(param).then(res => {
+      _this.setData({
+        matchIndex: parseInt(res.data.result.data.gameEvent)-1,
+        rounds: res.data.result.data.rounds,
+        groups: res.data.result.data.groups,
+        participant: res.data.result.data.participant,
+        participant2: res.data.result.data.participant2,
+        matchDay: res.data.result.data.gameDate,
+        startTime: res.data.result.data.beginTime,
+        endTime: res.data.result.data.endTime,
+        score: res.data.result.data.score,
+        score2: res.data.result.data.score2,
+        address: res.data.result.data.address
+      })
+    }
+    ).catch(e =>
+      console.log(e)
+      )
   },
 
   onShow: function () {
@@ -54,7 +88,7 @@ Page({
   //选择轮次
   bindRoundChange(e) {
     this.setData({
-      roundIndex: e.detail.value
+      rounds: this.data.roundArr[e.detail.value]
     })
   },
 
@@ -118,14 +152,14 @@ Page({
     })
   },
 
-  //提交添加小组赛
-  submitAdd(){
+  //提交编辑小组赛
+  submitAdd() {
     let _this = this;
 
     const submitData = {
       'gameId': this.data.addGameId,
       'gameEvent': parseInt(this.data.matchIndex) + 1,
-      'rounds': this.data.roundArr[this.data.roundIndex],
+      'rounds': this.data.rounds,
       'groups': this.data.groups,
       'participant': this.data.participant,
       'participant2': this.data.participant2,
@@ -134,7 +168,8 @@ Page({
       'endTime': this.data.endTime,
       'address': this.data.address,
       'score': this.data.score,
-      'score2': this.data.score2
+      'score2': this.data.score2,
+      'id': this.data.teamId
     }
 
     let param = {
@@ -154,12 +189,12 @@ Page({
       if (res.data.code == '000000') {
         //成功
         wx.navigateBack({
-          delta:-1
+          delta: -1
         })
       }
     }
     ).catch(e =>
       console.log(e)
-    )
+      )
   }
 })

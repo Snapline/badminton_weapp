@@ -16,7 +16,7 @@
     </view>
 
     <view class="sim-form-group" wx:if="{{matchIndex==5}}">
-      <label>比赛项目:</label>
+      <label style="margin-bottom:10rpx;">比赛项目:</label>
        <checkbox-group bindchange="chooseTeamType">
         <label class="checkbox" wx:for="{{teamType}}">
           <checkbox value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
@@ -66,7 +66,15 @@
     <view class="sim-form-group">
       <label style="width:200rpx; display:block">请上传海报图片</label>
       <view bindtap="chooseImage">
-          <view class="image_border">
+          <view class="image_show" wx:if="{{imageList.length>0}}">
+            <block wx:for="{{imageList}}" wx:for-item="image">
+              <image src="{{image}}"></image>
+            </block>
+          </view>
+          
+
+
+          <view class="image_border" wx:if="{{imageList.length==0}}">
             <view class="image-plus-horizontal"></view>
             <view class="image-plus-vertical"></view>
           </view>

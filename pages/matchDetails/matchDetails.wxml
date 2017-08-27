@@ -1,106 +1,68 @@
 <!--查看赛程的页面-->
-<view class="header_bar">小组赛</view>
-<view class="item_box">
-  <view class="header_one">---第一轮---</view>
+<view class="detail_box">
+  <view class="header_bar">小组赛</view>
 
-  <view class="team_box">
-    <view class="header_one">---A组---</view>
-
-    <view class="one_match">
-      <view class="line">
-        <text class="members">李晓明vs张晓华</text>
-        <view class="scores">--:--</view>
-      </view>
-      
-      <view class="line">
-        <text class="time">2017-07-08   19:00-21:00</text>
-        <view class="status">未开始</view>
-      </view>
-      
-      <view class="line">
-      <view class="address">虹口足球场</view>
-      </view>
-
-    </view>
-
-     <view class="one_match">
-      <view class="line">
-        <text class="members">李晓明vs张晓华</text>
-        <view class="scores">--:--</view>
-      </view>
-      
-      <view class="line">
-        <text class="time">2017-07-08   19:00-21:00</text>
-        <view class="status">未开始</view>
-      </view>
-      
-      <view class="line">
-      <view class="address">虹口足球场</view>
-      </view>
-
-    </view>
+  <view class="none_tips" wx:if="{{teamList.length==0}}">
+    暂无小组赛赛程
   </view>
 
-  <view class="team_box">
-    <view class="header_one">---B组---</view>
+  <view class="item_box" wx:for="{{teamList}}" wx:for-item="parentItem">
+    <view class="header_one">---{{parentItem.roundName}}---</view>
 
-    <view class="one_match">
-      <view class="line">
-        <text class="members">qwe vs asd</text>
-        <view class="scores">--:--</view>
-      </view>
-      
-      <view class="line">
-        <text class="time">2017-07-08   29:00-21:00</text>
-        <view class="status">已结束</view>
-      </view>
-      
-      <view class="line">
-      <view class="address">嘻嘻足球场</view>
+    <view class="team_box" wx:for="{{parentItem.teamInfo}}" wx:for-item="teamItem">
+      <view class="header_one">---{{teamItem.teamName}}---</view>
+
+      <view class="one_match" wx:for="{{teamItem.matchInfo}}" wx:for-item="matchItem">
+        <view class="line">
+          <text class="members">{{matchItem.participant}}vs{{matchItem.participant2}}</text>
+          <view class="scores">{{matchItem.score==''?'--':matchItem.score}}:{{matchItem.score2==''?'--':matchItem.score2}}</view>
+        </view>
+        
+        <view class="line">
+          <text class="time">{{matchItem.gameDate}}  {{matchItem.beginTime}}</text>
+          <view class="status" wx:if="{{matchItem.progress=='未开始'}}">未开始</view>
+          <view class="status" wx:if="{{matchItem.progress=='进行中'}}" style="color:red">进行中</view>
+          <view class="status" wx:if="{{matchItem.progress=='已结束'}}" style="color:#000">已结束</view>
+        </view>
+        
+        <view class="line">
+        <view class="address">{{matchItem.address}}</view>
+        </view>
+
       </view>
 
     </view>
+
   </view>
 
+  <view class="header_bar">淘汰赛</view>
+
+  <view class="none_tips" wx:if="{{knockoutList.length==0}}">
+    暂无淘汰赛赛程
+  </view>
+
+  <view class="item_box" wx:for="{{knockoutList}}" wx:for-item="parentItem">
+    <view class="header_one">---{{parentItem.roundName}}---</view>
+
+      <view class="one_match" wx:for="{{parentItem.matchInfo}}" wx:for-item="matchItem">
+        <view class="line">
+          <text class="members">{{matchItem.participant}}vs{{matchItem.participant2}}</text>
+          <view class="scores">{{matchItem.score==''?'--':matchItem.score}}:{{matchItem.score2==''?'--':matchItem.score2}}</view>
+        </view>
+        
+        <view class="line">
+          <text class="time">{{matchItem.gameDate}}  {{matchItem.beginTime}}</text>
+          <view class="status" wx:if="{{matchItem.progress=='未开始'}}">未开始</view>
+          <view class="status" wx:if="{{matchItem.progress=='进行中'}}" style="color:red">进行中</view>
+          <view class="status" wx:if="{{matchItem.progress=='已结束'}}" style="color:#000">已结束</view>
+        </view>
+        
+        <view class="line">
+        <view class="address">{{matchItem.address}}</view>
+        </view>
+
+      </view>
+
+
+  </view>
 </view>
-
-<view class="header_bar">淘汰赛</view>
-
-
-  <view class="eliminated_box">
-    <view class="header_one">---半决赛---</view>
-
-    <view class="one_match">
-      <view class="line">
-        <text class="members">李晓明vs张晓华</text>
-        <view class="scores">--:--</view>
-      </view>
-      
-      <view class="line">
-        <text class="time">2017-07-08   19:00-21:00</text>
-        <view class="status">未开始</view>
-      </view>
-      
-      <view class="line">
-      <view class="address">虹口足球场</view>
-      </view>
-
-    </view>
-
-    <view class="one_match">
-      <view class="line">
-        <text class="members">李晓明vs张晓华</text>
-        <view class="scores">--:--</view>
-      </view>
-      
-      <view class="line">
-        <text class="time">2017-07-08   19:00-21:00</text>
-        <view class="status">未开始</view>
-      </view>
-      
-      <view class="line">
-        <view class="address">虹口足球场</view>
-      </view>
-
-    </view>
-  </view>

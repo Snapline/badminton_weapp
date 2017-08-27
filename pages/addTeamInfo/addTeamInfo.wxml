@@ -9,7 +9,7 @@
 
     <view class="sim-form-group">
       <label>项目:</label>
-      <picker bindchange="bindPickerChange" value="{{matchIndex}}" range="{{matchArr}}" bindchange="matchChange">
+      <picker value="{{matchIndex}}" range="{{matchArr}}" bindchange="bindTypeChange">
         <view class="picker">
           {{matchArr[matchIndex]}}<text class="sim-arrow-bottom"></text>
         </view>
@@ -18,7 +18,7 @@
 
     <view class="sim-form-group">
       <label>轮次:</label>
-      <picker bindchange="bindPickerChange" value="{{roundIndex}}" range="{{matchArr}}" bindchange="matchChange">
+      <picker value="{{roundIndex}}" range="{{roundArr}}" bindchange="bindRoundChange">
         <view class="picker">
           {{roundArr[roundIndex]}}<text class="sim-arrow-bottom"></text>
         </view>
@@ -27,17 +27,17 @@
 
     <view class="sim-form-group">
       <label>组别:</label>
-      <input placeholder="请输入组别，例如：A组" />
+      <input value="{{groups}}" bindinput="inputGroups" placeholder="请输入组别，例如：A组" />
     </view>
 
     <view class="sim-form-group">
       <label>参赛方1:</label>
-      <input placeholder="请输入参赛方1的名称" />
+      <input value="{{participant}}" bindinput="inputParticipant" placeholder="请输入参赛方1的名称" />
     </view>
 
     <view class="sim-form-group">
       <label>参赛方2:</label>
-      <input placeholder="请输入参赛方2的名称" />
+      <input value="{{participant2}}" bindinput="inputParticipant2" placeholder="请输入参赛方2的名称" />
     </view>
 
     <view class="sim-form-group">
@@ -69,14 +69,14 @@
 
     <view class="sim-form-group">
       <label>比分:</label>
-      <input style="width:120rpx; margin-right:10rpx;" placeholder="参赛方1" />
+      <input style="width:120rpx; margin-right:10rpx;" bindinput="inputScore" value="{{score}}" placeholder="参赛方1" />
       vs
-      <input style="width:120rpx; margin-left:10rpx;" placeholder="参赛方2" />
+      <input style="width:120rpx; margin-left:10rpx;" bindinput="inputScore2" value="{{score2}}" placeholder="参赛方2" />
     </view>
 
     <view class="sim-form-group">
       <label>比赛地点:</label>
-      <input placeholder="请输入比赛地点" />
+      <input value="{{address}}" bindinput="inputAddress" placeholder="请输入比赛地点" />
     </view>
 
   </view>

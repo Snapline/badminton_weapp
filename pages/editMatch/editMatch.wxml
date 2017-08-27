@@ -15,6 +15,15 @@
       </picker>
     </view>
 
+     <view class="sim-form-group" wx:if="{{matchIndex==5}}">
+      <label>比赛项目:</label>
+       <checkbox-group bindchange="chooseTeamType">
+        <label class="checkbox" wx:for="{{teamType}}">
+          <checkbox value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
+        </label>
+      </checkbox-group>
+    </view>
+
     <view class="sim-form-group">
       <label>开始时间:</label>
       <picker mode="date" value="{{startTime}}" bindchange="startTimeChange">
@@ -44,18 +53,21 @@
 
     <view class="sim-form-group">
       <label>地点:</label>
-      <input placeholder="请输入地点" bindinput="inputAddress"/>
+      <input placeholder="请输入地点" value="{{address}}" bindinput="inputAddress"/>
     </view>
 
     <view class="sim-form-group">
       <label>人数上限:</label>
-      <input placeholder="请输入人数上限" bindinput="inputLimited"/>
+      <input placeholder="请输入人数上限" value="{{memberLimited}}" bindinput="inputLimited"/>
     </view>
 
     <view class="sim-form-group">
       <label style="width:200rpx; display:block">请上传海报图片</label>
       <view bindtap="chooseImage">
-          <view class="image_border">
+          <view class="image_show" wx:if="{{hasImage}}">
+            <image src="{{imageUrl}}"></image>
+          </view>
+          <view class="image_border" wx:if="{{!hasImage}}">
             <view class="image-plus-horizontal"></view>
             <view class="image-plus-vertical"></view>
           </view>
@@ -69,15 +81,15 @@
   <view class="sim-form">
     <view class="sim-form-group">
       <label>称呼:</label>
-      <input placeholder="请输入您的称呼" bindinput="inputName" />
+      <input placeholder="请输入您的称呼" value="{{ownerName}}" bindinput="inputName" />
     </view>
 
     <view class="sim-form-group">
       <label>联系电话:</label>
-      <input placeholder="请输入您的手机号码" bindinput="inputPhone" />
+      <input placeholder="请输入您的手机号码" value="{{phoneNumber}}" bindinput="inputPhone" />
     </view>
   </view>
 
   <view>
-    <button class="sim-btn sim-btn-success">提交</button>
+    <button class="sim-btn sim-btn-info" bindtap="submitInfo">确认修改</button>
   </view>

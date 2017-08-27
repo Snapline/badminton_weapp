@@ -1,18 +1,26 @@
 {
   "pages":[
-    "pages/myOrganization/myOrganization",
     "pages/activity/activity",
-    "pages/create/create",
     "pages/enroll/enroll",
     "pages/enrollInfo/enrollInfo",
-    "pages/enroll/enroll",
+
+    "pages/create/create",
     "pages/mine/mine",
     "pages/matchDetails/matchDetails",
     "pages/addElimaination/addElimaination",
-    "pages/addTeamInfo/addTeamInfo",
-    "pages/myMatchList/myMatchList",
-    "pages/attendList/attendList",
+    "pages/editElimainationInfo/editElimainationInfo",
     "pages/addMatchPage/addMatchPage",
+    "pages/addTeamInfo/addTeamInfo",
+    "pages/editTeamInfo/editTeamInfo",
+    "pages/myMatchList/myMatchList",
+
+    "pages/myOrganization/myOrganization",
+    "pages/clubEnroll/clubEnroll",
+    "pages/clubEnrollInfo/clubEnrollInfo",
+    "pages/participantClub/participantClub",
+
+    "pages/editMatch/editMatch",
+    "pages/attendList/attendList",
     "pages/memberList/memberList",
 
     "pages/about/about",

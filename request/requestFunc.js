@@ -1,5 +1,5 @@
 import Promise from 'es6-promise';
-var apiDomain = 'http://114.220.192.223:9090';
+var apiDomain = 'http://180.108.185.181:9090';
 var app = getApp();
 
 var oneRequest = {

@@ -27,5 +27,19 @@ Page({
     wx.navigateTo({
       url: '../attendList/attendList',
     })
-  }
+  },
+
+  //跳转创建的社团活动
+  gotoClubMatch() {
+    wx.navigateTo({
+      url: '../myOrganization/myOrganization',
+    })
+  },
+
+  //跳转参加的社团活动
+  gotoClubParticipant() {
+    wx.navigateTo({
+      url: '../participantClub/participantClub',
+    })
+  },
 })

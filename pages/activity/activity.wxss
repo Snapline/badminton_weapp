@@ -14,7 +14,7 @@
 
 .fa{
   font-size:32rpx;
-  vertical-align: top;
+  vertical-align: bottom;
 }
 
 .sim-modal-container {
@@ -95,4 +95,10 @@
   width:130rpx;
   text-align: center;
   line-height:50rpx;
+}
+
+.none_tips{
+   margin:100rpx;
+  text-align: center; 
+  font-family: '微软雅黑'
 }

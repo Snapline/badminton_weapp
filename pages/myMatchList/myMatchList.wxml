@@ -1,5 +1,5 @@
 <view>
-  <view class="none_tips" wx:if="{{noRecord}}">
+  <view class="none_tips" wx:if="{{matchList.length==0}}">
     您暂未创建比赛
   </view>
   <view class="match_box" wx:for="{{matchList}}">
@@ -8,14 +8,16 @@
     <text>{{item.address}}</text>
     <view class="text_container">
       <text>人数上限:{{item.limitNum}}</text>
-      <text>已报名:{{item.dated}}</text>
-      <text>{{item.progress}}</text>
+      <text>已报名:{{item.participantNum}}</text>
+      <text wx:if="{{item.progress=='进行中'}}" style="color:red">{{item.progress}}</text>
+      <text wx:if="{{item.progress=='报名中'}}" style="color:green">{{item.progress}}</text>
+      <text wx:if="{{item.progress=='已结束'}}">{{item.progress}}</text>
     </view>
     <view class="img_container">
-        <image class="icon" src="../../images/tab3/editicon.png" bindtap="gotoEdit"></image>
-        <image class="icon" src="../../images/tab3/addicon.png" bindtap="gotoAdd"></image>
-        <image class="icon" src="../../images/tab3/chakan.png" bindtap="gotoDetails"></image>
-        <image class="icon" data-matchid="{{item.status}}" src="../../images/tab3/delete.png" bindtap="deleteMatch"></image>
+        <image class="icon" data-matchid="{{item.id}}" src="../../images/tab3/editicon.png" bindtap="gotoEdit"></image>
+        <image class="icon" data-matchid="{{item.id}}" src="../../images/tab3/addicon.png" bindtap="gotoAdd"></image>
+        <image class="icon" data-matchid="{{item.id}}" src="../../images/tab3/chakan.png" bindtap="gotoDetails"></image>
+        <image class="icon" data-matchid="{{item.id}}" src="../../images/tab3/delete.png" bindtap="deleteMatch"></image>
     </view>
   </view>
 </view>

@@ -6,7 +6,7 @@
         人数上限
       </text>
       <text class="number">
-        10
+        {{limitNum}}
       </text>
     </view>
 
@@ -15,7 +15,7 @@
         已报名
       </text>
       <text class="number">
-        10
+        {{participantNum}}
       </text>
     </view>
   </view>
@@ -30,13 +30,13 @@
         </view>
     </view>
 
-    <view class="info_item">
+    <view class="info_item" wx:for="{{participantList}}">
       <view class="left_name">
-        小小志市人民
+        {{item.name}}
       </view>
 
       <view class="right_num">
-        22
+        {{item.participantNum}}
       </view>
     </view>
   </view>

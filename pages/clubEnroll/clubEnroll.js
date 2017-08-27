@@ -7,19 +7,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imageUrl:'../../images/tab1/u73.png',
+    imageUrl: '../../images/tab1/u73.png',
     matchTime: '',
     matchAddress: '',
     memberNum: 0,
-    ownerName:'',
-    phone:'',
-    sendMatchId:0
+    ownerName: '',
+    phone: '',
+    sendMatchId: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options.id)
     this.setData({
       sendMatchId: options.matchid
     })
@@ -37,9 +38,9 @@ Page({
     }
 
     request.oneRequest.result(param).then(res => {
-      if (res.data.result.data.pic!=''){
+      if (res.data.result.data.pic != '') {
         that.setData({
-          imageUrl: request.APIDomian +'/'+ res.data.result.data.pic
+          imageUrl: request.APIDomian + '/' + res.data.result.data.pic
         })
       }
       that.setData({
@@ -52,7 +53,7 @@ Page({
     }
     ).catch(e =>
       console.log(e)
-    )
+      )
   },
   onShow: function () {
   },
@@ -60,14 +61,27 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-    
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: '这有一个羽毛球社团活动哦！',
+      path: './clubEnroll/clubEnroll?id=share',
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
   },
 
   //进入信息填写页面
-  gotoInfoPage(e){
+  gotoInfoPage(e) {
     wx.navigateTo({
-      url: '../enrollInfo/enrollInfo?matchid=' + this.data.sendMatchId
+      url: '../clubEnrollInfo/clubEnrollInfo?matchid=' + this.data.sendMatchId
     })
   }
 })

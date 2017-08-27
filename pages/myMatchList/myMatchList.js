@@ -9,11 +9,11 @@ Page({
   },
 
   onLoad: function (options) {
-  
+    getMyMatch(this)
   },
 
   onShow: function () {
-    getMyMatch(this)
+    
   },
 
   onPullDownRefresh: function () {
@@ -39,32 +39,71 @@ Page({
 
   //进入编辑页面
   gotoEdit(e){
+    const matchId = e.currentTarget.dataset.matchid;
     wx.navigateTo({
-      url: '../editMatch/editMatch?matchid=1',
+      url: '../editMatch/editMatch?matchid=' + matchId,
     })
   },
 
   //进入添加页面
   gotoAdd(e){
+    const matchId = e.currentTarget.dataset.matchid;
     wx.navigateTo({
-      url: '../addMatchPage/addMatchPage?matchid=1',
+      url: '../addMatchPage/addMatchPage?matchid=' + matchId,
     })
   },
 
   //进入赛程详情页面
   gotoDetails(e){
+    const matchId = e.currentTarget.dataset.matchid;
     wx.navigateTo({
-      url: '../matchDetails/matchDetails?matchid=1',
+      url: '../matchDetails/matchDetails?matchid=' + matchId,
     })
   },
 
   //删除
   deleteMatch(e){
+    const matchId = e.currentTarget.dataset.matchid;
+    const that = this;
     wx.showModal({
       content: '确定删除该比赛吗？',
       success: function (res) {
         if (res.confirm) {
           //调用接口
+          let param = {
+            'API_URL': '/wx/game/delete',
+            'data': {
+              'id': matchId
+            },
+            'header': {
+              'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
+              'Cookie': app.globalData.sessionId
+            },
+            'method': 'POST'
+          }
+
+          request.oneRequest.result(param).then(res => {
+            if (res.data.code == '000000') {
+              wx.showToast({
+                title: '删除成功',
+                icon: '',
+                duration: 2000
+              });
+              setTimeout(function () {
+                //翻页变量reset
+                that.setData({
+                  matchList: [],
+                  bottomNum: 1,
+                  hasToEnd: false
+                });
+                getMyMatch(that)
+              }, 1000)
+
+            }
+          }
+          ).catch(e =>
+            console.log(e)
+            )
         } else if (res.cancel) {
           
         }
@@ -78,7 +117,7 @@ function getMyMatch(that) {
     'API_URL': '/wx/game/creator/query',
     'data': {
       'pageNum': that.data.bottomNum,
-      'perPage': 2
+      'perPage': 5
     },
     'header': {
       'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',

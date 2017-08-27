@@ -20,7 +20,7 @@
       <label>类型:</label>
       <picker bindchange="bindPickerChange" value="{{typeIndex}}" range="{{matchType}}" bindchange="typeChange">
         <view class="picker">
-          {{matchType[typeIndex]}}<text class="sim-arrow-bottom"></text>
+          {{knockoutType}}<text class="sim-arrow-bottom"></text>
         </view>
       </picker>
     </view>
@@ -72,6 +72,35 @@
     <view class="sim-form-group">
       <label>比赛地点:</label>
       <input value="{{address}}" bindinput="inputAddress" placeholder="请输入比赛地点" />
+    </view>
+
+  </view>
+
+  <view class="header_bar">比赛结果(已产生冠、亚、季军的填写)</view>
+  <view class="sim-form result_box">
+    <view class="sim-form-group">
+      <checkbox-group bindchange="checkboxChange">
+        <label class="checkbox">
+          <checkbox value="champion" />冠军
+          <checkbox value="silverman" />亚军
+          <checkbox value="blondeman" />季军
+        </label>
+      </checkbox-group>
+    </view>
+
+    <view class="sim-form-group" wx:if="{{showGolden}}">
+      <label class="result_label">冠军:</label>
+      <input value="{{champion}}" bindinput="inputChampion" placeholder="请填写冠军的名称" />
+    </view>
+
+    <view class="sim-form-group" wx:if="{{showSilver}}">
+      <label class="result_label">亚军:</label>
+      <input value="{{second}}" bindinput="inputSecond" placeholder="请填写亚军的名称" />
+    </view>
+
+    <view class="sim-form-group" wx:if="{{showBlonde}}">
+      <label class="result_label">季军:</label>
+      <input value="{{third}}" bindinput="inputThird" placeholder="请填写季军的名称" />
     </view>
 
   </view>

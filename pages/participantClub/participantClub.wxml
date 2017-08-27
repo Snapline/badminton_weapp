@@ -1,6 +1,6 @@
 <view>
   <view class="none_tips" wx:if="{{matchList.length==0}}">
-    您暂未创建社团活动
+    您暂未参加社团活动
   </view>
   <view class="match_box" wx:for="{{matchList}}">
     <text style="font-size:30rpx; color:#000000">{{item.gameType}}</text>
@@ -14,8 +14,6 @@
       <text wx:if="{{item.progress=='未开始'}}" style="color:#0BA8F9">{{item.progress}}</text>
     </view>
     <view class="img_container">
-        <image class="icon" data-matchid="{{item.id}}" src="../../images/tab3/editicon.png" bindtap="gotoEdit"></image>
-        <image class="icon" data-matchid="{{item.id}}" src="../../images/tab3/chakan2.png" bindtap="gotoEnrollPage"></image>
         <image class="icon" data-matchid="{{item.id}}" src="../../images/tab3/shetuan.png" bindtap="gotoDetails"></image>
         <image class="icon" data-matchid="{{item.id}}" src="../../images/tab3/delete.png" bindtap="deleteMatch"></image>
     </view>

@@ -1,15 +1,15 @@
-<!--添加淘汰赛-->
+<!--编辑小组赛-->
 
   <!-- 比赛信息表单 -->
   <view class="sim-form">
     <view class="sim-form-group">
-        <label style="width:400rpx; display:block; color:#999999">请完善淘汰赛信息</label>
+        <label style="width:400rpx; display:block; color:#999999">请编辑小组赛信息</label>
         
     </view>
 
     <view class="sim-form-group">
       <label>项目:</label>
-      <picker bindchange="bindPickerChange" value="{{matchIndex}}" range="{{matchArr}}" bindchange="matchChange">
+      <picker value="{{matchIndex}}" range="{{matchArr}}" bindchange="bindTypeChange">
         <view class="picker">
           {{matchArr[matchIndex]}}<text class="sim-arrow-bottom"></text>
         </view>
@@ -17,12 +17,17 @@
     </view>
 
     <view class="sim-form-group">
-      <label>类型:</label>
-      <picker bindchange="bindPickerChange" value="{{typeIndex}}" range="{{matchType}}" bindchange="typeChange">
+      <label>轮次:</label>
+      <picker value="{{roundIndex}}" range="{{roundArr}}" bindchange="bindRoundChange">
         <view class="picker">
-          {{matchType[typeIndex]}}<text class="sim-arrow-bottom"></text>
+          {{rounds}}<text class="sim-arrow-bottom"></text>
         </view>
       </picker>
+    </view>
+
+    <view class="sim-form-group">
+      <label>组别:</label>
+      <input value="{{groups}}" bindinput="inputGroups" placeholder="请输入组别，例如：A组" />
     </view>
 
     <view class="sim-form-group">
@@ -76,8 +81,8 @@
 
   </view>
 
-  <view>
-    <button class="sim-btn sim-btn-info" bindtap="submitEliminate">提交</button>
-  </view>
 
+  <view>
+    <button class="sim-btn sim-btn-success" bindtap="submitAdd">提交</button>
+  </view>
 

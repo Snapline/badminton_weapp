@@ -1,0 +1,18 @@
+.container{
+  align-items: stretch
+}
+
+.paperwall{
+  width:650rpx;
+  height:412rpx;
+  display: block;
+  margin: 40rpx auto;
+}
+
+.icon_area{
+  width:32rpx;
+  height:32rpx;
+  margin-right:10rpx;
+  vertical-align: bottom
+}
+

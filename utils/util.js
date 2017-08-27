@@ -18,7 +18,10 @@ function formatNumber(n) {
 
 function formatDay(date) {
   var year = date.getFullYear()
-  var month = date.getMonth() + 1
+  var month = date.getMonth() + 1;
+  if(month<10){
+    month = 0+String(month)
+  }
   var day = date.getDate()
 
   return year+'-'+month+'-'+day

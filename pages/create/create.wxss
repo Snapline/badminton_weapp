@@ -56,3 +56,8 @@ page{
   margin-bottom:20rpx;
   font-size:28rpx
 }
+
+.image_show{
+  width:90%;
+  margin: 0 auto;
+}

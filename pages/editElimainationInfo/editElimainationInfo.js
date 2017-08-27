@@ -9,6 +9,7 @@ Page({
     matchIndex: 0,
     matchType: ['1/4决赛', '半决赛', '决赛'],
     typeIndex: 0,
+    knockoutType:'1/4决赛',
     participant: '',
     participant2: '',
     matchDay: utils.formatDay(new Date),
@@ -17,6 +18,9 @@ Page({
     score: '',
     score2: '',
     address: '',
+    champion: '',
+    second:'',
+    third:'',
 
     showGolden: false,
     showSilver: false,
@@ -24,10 +28,44 @@ Page({
   },
 
   onLoad: function (options) {
-    const oGameId = options.matchid;
     this.setData({
-      addGameId: oGameId
+      addGameId: options.matchid,
+      teamId: options.teamid
     })
+    //查询淘汰赛信息
+    let _this = this;
+    let param = {
+      'API_URL': '/wx/knockout/query',
+      'data': {
+        'id': options.teamid
+      },
+      'header': {
+        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
+        'Cookie': app.globalData.sessionId
+      },
+      'method': 'POST'
+    }
+
+    request.oneRequest.result(param).then(res => {
+      _this.setData({
+        matchIndex: parseInt(res.data.result.data.gameEvent) - 1,
+        knockoutType: res.data.result.data.rounds,
+        participant: res.data.result.data.participant,
+        participant2: res.data.result.data.participant2,
+        matchDay: res.data.result.data.gameDate,
+        startTime: res.data.result.data.beginTime,
+        endTime: res.data.result.data.endTime,
+        score: res.data.result.data.score,
+        score2: res.data.result.data.score2,
+        address: res.data.result.data.address,
+        champion: res.data.result.data.champion,
+        second: res.data.result.data.second,
+        third: res.data.result.data.third
+      })
+    }
+    ).catch(e =>
+      console.log(e)
+      )
   },
 
   onShow: function () {
@@ -57,7 +95,7 @@ Page({
   //修改类型
   typeChange(e) {
     this.setData({
-      typeIndex: e.detail.value
+      knockoutType: this.data.matchType[e.detail.value]
     })
   },
 
@@ -114,6 +152,48 @@ Page({
     })
   },
 
+  //选择冠亚季军的checkbox
+  checkboxChange(e) {
+    let checkboxList = e.detail.value;
+    Array.prototype.contains = function (obj) {
+      var i = this.length;
+      while (i--) {
+        if (this[i] === obj) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    const hasGolden = checkboxList.contains('champion');
+    const hasSilver = checkboxList.contains('silverman');
+    const hasBlonde = checkboxList.contains('blondeman');
+
+    this.setData({
+      showGolden: hasGolden,
+      showSilver: hasSilver,
+      showBlonde: hasBlonde
+    })
+
+  },
+
+  //输入冠亚季军
+  inputChampion(e) {
+    this.setData({
+      champion: e.detail.value
+    })
+  },
+  inputSecond(e) {
+    this.setData({
+      second: e.detail.value
+    })
+  },
+  inputThird(e) {
+    this.setData({
+      third: e.detail.value
+    })
+  },
+
   //创建淘汰赛
   submitEliminate() {
     let _this = this;
@@ -129,11 +209,15 @@ Page({
       'endTime': this.data.endTime,
       'address': this.data.address,
       'score': this.data.score,
-      'score2': this.data.score2
+      'score2': this.data.score2,
+      'id': this.data.teamId,
+      'champion': this.data.champion,
+      'second': this.data.second,
+      'third': this.data.third
     }
 
     let param = {
-      'API_URL': '/wx/knockout/create',
+      'API_URL': '/wx/knockout/update',
       'data': submitData,
       'header': {
         'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
